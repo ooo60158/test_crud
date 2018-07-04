@@ -58,4 +58,18 @@ Composer (PHP Dependency Manager)<br>
 </form>
 ```
 2.在 route 中加入 `POST /submitContact` 並指向 `ContactUsController@store`<br>
+3.在 `ContactUsController` 中新增 `store` method 來處理 POST 進來的資料<br>
+4. 在 `store` method 中寫 `dd( request()->all() );` 可以 die & dump 所有 POST 進來的資料，用做 debug<br>
+5. 再回到 <http://localhost:8000/contactUs> 輸入假資料按 `送出`，認識一下 `TokenMismatchException` 的錯誤訊息<br>
+6. 在表單加入 `{{ csrf_field() }}`，如下：
+```
+<form action="/submitContact" method="POST">
+    {{ csrf_field() }}
+    // 中間略
+    <button type="submit">送出</button>
+</form>
+```
+
+8.再回到 <http://localhost:8000/contactUs> 輸入假資料按 `送出`，畫面上應該會出現你剛剛輸入的資料了。
+
 
