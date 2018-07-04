@@ -38,7 +38,7 @@ Composer (PHP Dependency Manager)<br>
 4.手動建立 `resources/views/contact/index.blade.php`<br>
 5.下載找了一個[Bootstrapious](https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form)<br>
 6.把index程式碼貼到index.blade.php<br>
-7.舉例，要引用 `jquery.min.js` 請下載後放在 `public/js` 下；要引用 `bootstrap.min.css` 請下載後放在 `public/css` 下，在 `contact/index.blade.php` 裡這樣寫：<br>
+7.舉例，要引用 `jquery.min.js` 請下載後放在 `public/js` 下；要引用 `bootstrap.min.css` 請下載後放在 `public/css` 下，在 `contact/index.blade.php` 裡這樣寫：
 
 <link rel="stylesheet" href="/css/bootstrap.min.css" />
 <script src="/js/jquery.min.js"></script><br>
