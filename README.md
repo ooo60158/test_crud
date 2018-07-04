@@ -92,8 +92,41 @@ DB_PASSWORD=secret<br>
 
 ### 6.建立 Laravel Migration 和 Model 用來建立及存取 DB table
 
+1.剛剛你在 MySQL client 裡應該會看到 users、password\_reset、migrations 三個，沒有就是有錯。<br>
+php artisan migrate成功後會出現以下兩行<br>
+database/migrations/2014_10_12_000000_create_users_table.php<br>
+database/migrations/2014_10_12_100000_create_password_resets_table.php<br>
+
+現在，我們要建我們自己的 migration 檔，透過 migration 檔在 DB 中建 table<br>
+ 
+2.php artisan make:model Contact -m 會做兩件事<br>
+    產生新的 migration 檔在 `database/migrations/2016_09_XX_XXXXXX_create_contacts_table.php<br>
+    產生新的 model 檔在 `app/Contact.php<br>
+    
+3.編輯 2018_06_XX_XXXXXX_create_contacts_table.php 檔，檔名打 X 的部份是會隨時間改變的，可忽略，把「聯絡我們」表單中要存的欄位建立起來<br>
+
+public function up()
+    {
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('firstName')->comment('名');
+            $table->string('lastName')->comment('姓');
+            $table->string('email')->comment('Email');
+            $table->string('phone')->nullable()->comment('電話');
+            $table->text('message');
+
+
+            $table->timestamps();
+        });
+    }
+    
+4.再執行  php artisan migrate，然後再用 MySQL client 檢查資料庫，你的 contacts table 應該就建好了
+
+### 7.把「聯絡我們」表單收到的資料存進 DB
+
 1.注意 namespace，記得是用 \App\Contact 來使用 Model，不然就需要用 use App\Contact;
-2.編輯 ContactUsController@store 將 POST 進來的資料存進資料庫
+2.編輯 ContactUsController@store 將 POST 進來的資料存進資料庫<br>
 public function store()
     {
         
@@ -108,6 +141,12 @@ public function store()
         $newContact->save();
         dd(request()->all());
     }
+    
+    
+    
+### 8.  利用 `make:auth` 來建立簡單的登入機制
+
+
 
 
 
