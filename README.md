@@ -23,6 +23,7 @@ Composer (PHP Dependency Manager)<br>
 6. 以編輯器開啟D:\xampp\apache\conf\extra\httpd-vhosts.conf<br>
 7. 第16行輸入LISTEN 8000。27行改<VirtualHost *:8000>。 
        29行改DocumentRoot "D:\xampp\htdocs\crud\public"<br>
+       
 8.執行php artisan serve並打開<http://localhost:8000/> 應該可以看到 Laravel 專案初始的首頁 (記得XAMPP要開啟Apache跟MySQL)<br>
 
 ### 安裝編輯器
