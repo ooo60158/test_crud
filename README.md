@@ -45,3 +45,17 @@ Composer (PHP Dependency Manager)<br>
 ```
 
 8.重新整理 <http://localhost:8000/contactUs> 看到「聯絡我們」表單<br>
+
+
+### 表單 POST 傳送資料到後端並顯示
+
+
+1.聯絡我們表單舉例，重點在 `action="/submitContact"` 和 `method='POST'`
+```
+<form action="/submitContact" method="POST">
+    // 中間略
+    <button type="submit">送出</button>
+</form>
+```
+2.在 route 中加入 `POST /submitContact` 並指向 `ContactUsController@store`<br>
+
