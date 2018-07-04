@@ -4,13 +4,13 @@
 
 laravel安裝環境如下:
 
-PHP >= 7.0.0
-OpenSSL PHP Extension
-PDO PHP Extension
-Mbstring PHP Extension
-Tokenizer PHP Extension
-XML PHP Extension
-Composer (PHP Dependency Manager)
+PHP >= 7.0.0<br>
+OpenSSL PHP Extension<br>
+PDO PHP Extension<br>
+Mbstring PHP Extension<br>
+Tokenizer PHP Extension<br>
+XML PHP Extension<br>
+Composer (PHP Dependency Manager)<br>
 
 
 
