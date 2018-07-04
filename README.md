@@ -105,7 +105,7 @@ database/migrations/2014_10_12_100000_create_password_resets_table.php<br>
     
 3.編輯 2018_06_XX_XXXXXX_create_contacts_table.php 檔，檔名打 X 的部份是會隨時間改變的，可忽略，把「聯絡我們」表單中要存的欄位建立起來<br>
 
-public function up()
+public function up()<br>
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
