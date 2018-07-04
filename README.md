@@ -25,7 +25,8 @@ Composer (PHP Dependency Manager)<br>
        29行改DocumentRoot "D:\xampp\htdocs\crud\public"<br>
 8.執行php artisan serve並打開<http://localhost:8000/> 應該可以看到 Laravel 專案初始的首頁 (記得XAMPP要開啟Apache跟MySQL)<br>
 
-
+### 安裝編輯器
+我是用vscode  可參考這篇(https://dometi.com.tw/blog/laravel-beginner-04/)
 
 
 
