@@ -74,10 +74,10 @@ Composer (PHP Dependency Manager)<br>
 
 ### 5.資料庫連線
 
-1. 建立 l53_crud 資料庫<br>
-2. 建立 homestead 使用者，設密碼為 secret<br>
-3. 把 l53_crud 資料庫的權限開給 homestead 使用者，權限全開<br>
-4. 編輯 .env 檔<br>
+1.建立 l53_crud 資料庫<br>
+2.建立 homestead 使用者，設密碼為 secret<br>
+3.把 l53_crud 資料庫的權限開給 homestead 使用者，權限全開<br>
+4.編輯 .env 檔<br>
 
 DB_CONNECTION=mysql<br>
 DB_HOST=127.0.0.1<br>
@@ -85,5 +85,30 @@ DB_PORT=3306<br>
 DB_DATABASE=l53_crud<br>
 DB_USERNAME=homestead<br>
 DB_PASSWORD=secret<br>
+
+5.設定好要先把xampp的apache跟mysql重開，才會讀取到新的 .env 設定<br>
+6. 執行 php artisan migrate 如果沒有錯誤訊息就表示 Laravel 連線資料庫正常，如果有錯誤檢查看名稱有沒有錯(我就是用了curd)。
+如果還是有錯請[參考](https://phperzh.com/articles/2447) ，我是遇到這個問題。<br>
+
+### 6.建立 Laravel Migration 和 Model 用來建立及存取 DB table
+
+1.注意 namespace，記得是用 \App\Contact 來使用 Model，不然就需要用 use App\Contact;
+2.編輯 ContactUsController@store 將 POST 進來的資料存進資料庫
+public function store()
+    {
+        
+        var_dump(request()->all());
+
+        $newContact = new Contact();
+        $newContact->firstName = request()->get('name');
+        $newContact->lastName = request()->get('surname');
+        $newContact->email = request()->get('email');
+        $newContact->phone = request()->has('phone') ? request()->get('phone') : '';
+        $newContact->message = request()->get('message');
+        $newContact->save();
+        dd(request()->all());
+    }
+
+
 
 
