@@ -146,10 +146,15 @@ public function store()
     
     
     
-### 8.  利用 `make:auth` 來建立簡單的登入機制
+### 8.  定義 DELETE request 到 /admin/contacts/{id} 時，觸發 AdminContactController@destroy，來刪除 contacts 資料，利用 `make:auth` 來建立簡單的登入機制
 
 
-
+1.php artisan make:auth 這樣就建好了！ <br>
+2.php artisan make:controller AdminContactController --resource 建立 AdminContactController！ <br>
+3.製作 Contact 列表頁面，定義 route /admin/contacts 並使用 AdminContactController@index 顯示出來<br>
+4.製作 Edit Contact 頁，定義 route /admin/contacts/edit/{id} 並使用 AdminContactController@edit 顯示出來br>
+5.定義 PUT request 到 /admin/contacts/{id} 時，觸發 AdminContactController@update，來更新 contacts 資料<br>
+6.定義 DELETE request 到 /admin/contacts/{id} 時，觸發 AdminContactController@destroy，來刪除 contacts 資料<br>
 
 
 
