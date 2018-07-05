@@ -146,7 +146,7 @@ public function store()
     
     
     
-### 8.  定義 DELETE request 到 /admin/contacts/{id} 時，觸發 AdminContactController@destroy，來刪除 contacts 資料，利用 `make:auth` 來建立簡單的登入機制
+### 8.  建立管理員用的 AdminContactController，來刪除 contacts 資料，利用 `make:auth` 來建立簡單的登入機制
 
 
 1.php artisan make:auth 這樣就建好了！ <br>
