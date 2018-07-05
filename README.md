@@ -33,12 +33,13 @@ Composer (PHP Dependency Manager)<br>
 ### 3.建立聯絡我們表單
 
 1.在 routes/web.php 裡增加 route GET /contactUs，並指向 ContactUsController@index<br>
-2.下指令建 controller $ php artisan make:controller ContactUsController<br>
+2.下指令建 controller  php artisan make:controller ContactUsController<br>
 3.修改 index method 回傳 return view('contact.index'); 對應的檔案是 resources/views/contact/index.blade.php<br>
 4.手動建立 resources/views/contact/index.blade.php<br>
 5.下載找了一個[Bootstrapious](https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form)<br>
 6.把index程式碼貼到index.blade.php<br>
-7.舉例，要引用 jquery.min.js 請下載後放在 public/js 下；要引用 bootstrap.min.css 請下載後放在 public/css`下，在 contact/index.blade.php 裡這樣寫：
+7.把下載後的custom.css貼到public/css裡面，並在blade.php加入<link href="/css/custom.css" rel="stylesheet"><br>
+8.舉例，要引用 jquery.min.js 請下載後放在 public/js 下；要引用 bootstrap.min.css 請下載後放在 public/css`下，在 contact/index.blade.php 裡這樣寫：
 ``` html
 <link rel="stylesheet" href="/css/bootstrap.min.css" />
 <script src="/js/jquery.min.js"></script>
@@ -57,7 +58,7 @@ Composer (PHP Dependency Manager)<br>
     <button type="submit">送出</button>
 </form>
 ```
-2.在 route 中加入 `POST /submitContact` 並指向 `ContactUsController@store`<br>
+2.在 route 中加入 POST /submitContact` 並指向 ContactUsController@store<br>
 3.在 ContactUsController 中新增 `store` method 來處理 POST 進來的資料<br>
 4. 在 store` method 中寫 `dd( request()->all() ); 可以 die & dump 所有 POST 進來的資料，用做 debug<br>
 5. 再回到 <http://localhost:8000/contactUs> 輸入假資料按 `送出`，認識一下 TokenMismatchException 的錯誤訊息<br>
@@ -107,7 +108,8 @@ database/migrations/2014_10_12_100000_create_password_resets_table.php<br>
 
 public function up()<br>
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint 
+        table) {
             $table->increments('id');
 
             $table->string('firstName')->comment('名');
