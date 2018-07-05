@@ -101,7 +101,7 @@ database/migrations/2014_10_12_100000_create_password_resets_table.php<br>
 現在，我們要建我們自己的 migration 檔，透過 migration 檔在 DB 中建 table<br>
  
 2.php artisan make:model Contact -m 會做兩件事<br>
-    產生新的 migration 檔在 `database/migrations/2016_09_XX_XXXXXX_create_contacts_table.php<br>
+    產生新的 migration 檔在 `database/migrations/2018_06_XX_XXXXXX_create_contacts_table.php<br>
     產生新的 model 檔在 `app/Contact.php<br>
     
 3.編輯 2018_06_XX_XXXXXX_create_contacts_table.php 檔，檔名打 X 的部份是會隨時間改變的，可忽略，把「聯絡我們」表單中要存的欄位建立起來<br>
