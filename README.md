@@ -152,9 +152,13 @@ public function store()
 1.php artisan make:auth 這樣就建好了！ <br>
 2.php artisan make:controller AdminContactController --resource 建立 AdminContactController！ <br>
 3.製作 Contact 列表頁面，定義 route /admin/contacts 並使用 AdminContactController@index 顯示出來<br>
+Route::get('/admin/contacts', 'AdminContactController@index');<br>
 4.製作 Edit Contact 頁，定義 route /admin/contacts/edit/{id} 並使用 AdminContactController@edit 顯示出來br>
+Route::get('/admin/contacts', 'AdminContactController@index'):<br>
 5.定義 PUT request 到 /admin/contacts/{id} 時，觸發 AdminContactController@update，來更新 contacts 資料<br>
+Route::put('/admin/contacts/{id}', 'AdminContactController@update')->name('updateContact');<br>
 6.定義 DELETE request 到 /admin/contacts/{id} 時，觸發 AdminContactController@destroy，來刪除 contacts 資料<br>
+Route::delete('/admin/contacts/{id}', 'AdminContactController@destroy')->name('destroyContact');<br>
 
 
 
